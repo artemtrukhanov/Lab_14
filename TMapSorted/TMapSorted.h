@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef TMAPSORTED_H
 #define TMAPSORTED_H
 

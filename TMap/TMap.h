@@ -1,4 +1,3 @@
-#pragma once
 #ifndef TMAP_H
 #define TMAP_H
 
@@ -35,8 +34,8 @@ public:
 	TMapIterator<TK, TV> Begin();
 
 
-	template<class TK, class TV>
-	friend std::ostream& operator<<(std::ostream& ostream, const TMap<TK, TV>& map);
+	template<class TTK, class TTV>
+	friend std::ostream& operator<<(std::ostream& ostream, const TMap<TTK, TTV>& map);
 
 	friend class TNode<TK, TV>;
 };

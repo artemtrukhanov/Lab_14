@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef TNODE_H
 #define TNODE_H
 

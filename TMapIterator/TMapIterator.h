@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef TMAPITERATOR_H
 #define TMAPITERATOR_H
 
