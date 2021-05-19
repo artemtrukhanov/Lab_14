@@ -37,7 +37,7 @@ inline TMapSorted<TK, TV>::TMapSorted(int _size, TNode<TK, TV>* m)
 		{
 			if (this->mas[j] < this->mas[j + 1])
 			{
-				tmp = mas[j];
+				tmp = this->mas[j];
 				mas[j] = mas[j + 1];
 				mas[j + 1] = tmp;
 			}
@@ -160,7 +160,7 @@ inline void TMapSorted<TK, TV>::Add(TK k, TV v)
 		else
 			if (l == 0)
 				index = l;
-			else if (r == count)
+			else if (r == this->count)
 				index = r;
 			else
 				index = l;

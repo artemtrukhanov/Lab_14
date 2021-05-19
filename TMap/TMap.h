@@ -67,15 +67,6 @@ inline void TMap<TK, TV>::Resize(int _size)
 	delete[] mas;
 	mas = nmas;
 	size = _size;
-	/*if (_size > size)
-	{
-		auto* tmp = new TNode<TK, TV>[_size];
-		for (int i = 0; i < _size; i++)
-			tmp[i] = mas[i];
-		delete[] mas;
-		mas = tmp;
-		size = _size;
-	}*/
 }
 
 template<class TK, class TV>
