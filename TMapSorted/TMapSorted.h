@@ -28,14 +28,14 @@ inline TMapSorted<TK, TV>::TMapSorted(int _size, TNode<TK, TV>* m)
 {
 	this->mas = new TNode<TK, TV>[_size];
 	for (int i = 0; i < _size; i++)
-		mas[i] = m[i];
+		this->mas[i] = m[i];
 
 	TNode<TK, TV> tmp;
 	for (int i = _size - 1; i > 0; i--)
 	{
 		for (int j = 0; j < i; j++)
 		{
-			if (mas[j] < mas[j + 1])
+			if (this->mas[j] < this->mas[j + 1])
 			{
 				tmp = mas[j];
 				mas[j] = mas[j + 1];
@@ -60,7 +60,7 @@ inline TV& TMapSorted<TK, TV>::operator[](TK i)
 	{
 		int x = (l + r) / 2;
 		if (this->mas[x].key == i)
-			return mas[x].val;
+			return this->mas[x].val;
 		if (this->mas[x].key > i)
 			r = x;
 		else
@@ -114,7 +114,7 @@ inline void TMapSorted<TK, TV>::Delete(TK k)
 	{
 		if (l == 0)
 			index = l;
-		else if (r == count)
+		else if (r == this->count)
 			index = r;
 		else
 			index = l;
@@ -122,10 +122,10 @@ inline void TMapSorted<TK, TV>::Delete(TK k)
 	if (this->mas[index].key != k)
 		throw -1;
 
-	for (int i = index; i < count - 1; i++)
+	for (int i = index; i < this->count - 1; i++)
 		this->mas[i] = this->mas[i + 1];
 
-	count--;
+	this->count--;
 }
 
 template<class TK, class TV>
@@ -150,7 +150,7 @@ inline void TMapSorted<TK, TV>::Add(TK k, TV v)
 	}
 	if (index == -1)
 	{
-		if (l == 0 && r == count)
+		if (l == 0 && r == this->count)
 		{
 			if (this->mas[l] > node)
 				index = l;
@@ -165,7 +165,7 @@ inline void TMapSorted<TK, TV>::Add(TK k, TV v)
 			else
 				index = l;
 	}
-	count++;
+	this->count++;
 
 	if (this->count >= this->size)
 		TMap<TK, TV>::Resize(2 * this->size);
