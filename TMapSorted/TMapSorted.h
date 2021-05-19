@@ -38,8 +38,8 @@ inline TMapSorted<TK, TV>::TMapSorted(int _size, TNode<TK, TV>* m)
 			if (this->mas[j] < this->mas[j + 1])
 			{
 				tmp = this->mas[j];
-				mas[j] = mas[j + 1];
-				mas[j + 1] = tmp;
+				this->mas[j] = this->mas[j + 1];
+				this->mas[j + 1] = tmp;
 			}
 		}
 	}
