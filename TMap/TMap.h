@@ -51,7 +51,23 @@ inline std::ostream& operator<<(std::ostream& ostream, const TMap<TK, TV>& map)
 template<class TK, class TV>
 inline void TMap<TK, TV>::Resize(int _size)
 {
-	if (_size > size)
+	if (_size <= 0)
+		throw new std::exception;
+	int k;
+
+	TNode<TK, TV>* nmas = new TNode<TK, TV>[_size];
+	if (_size < size)
+		k = _size;
+	else 
+		k = size;
+		
+	for (int i = 0; i < k; i++)
+		nmas[i] = mas[i];
+
+	delete[] mas;
+	mas = nmas;
+	size = _size;
+	/*if (_size > size)
 	{
 		auto* tmp = new TNode<TK, TV>[_size];
 		for (int i = 0; i < _size; i++)
@@ -59,7 +75,7 @@ inline void TMap<TK, TV>::Resize(int _size)
 		delete[] mas;
 		mas = tmp;
 		size = _size;
-	}
+	}*/
 }
 
 template<class TK, class TV>
