@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TMAPITERATOR_H
+#define TMAPITERATOR_H
+
 template <class TTK, class TTV> class TNode;
 template <class TTK, class TTV> class TMap;
 
@@ -69,3 +72,5 @@ inline TNode<TK, TV> TMapIterator<TK, TV>::GetNode()
 		return c.mas[index];
 	return TNode<TK, TV>();
 }
+
+#endif

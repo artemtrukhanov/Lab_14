@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TMAPSORTED_H
+#define TMAPSORTED_H
+
 #include "TMap.h"
 
 template<class TK, class TV>
@@ -173,3 +176,5 @@ inline void TMapSorted<TK, TV>::Add(TK k, TV v)
 		mas[i] = mas[i - 1];
 	mas[index] = node;
 }
+
+#endif

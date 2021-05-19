@@ -1,4 +1,6 @@
 #pragma once
+#ifndef TMAP_H
+#define TMAP_H
 
 #include <fstream>
 #include <iostream>
@@ -171,3 +173,5 @@ inline TMapIterator<TK, TV> TMap<TK, TV>::Begin()
 {
 	return TMap::iterator(*this);
 }
+
+#endif

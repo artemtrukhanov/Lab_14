@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef TNODE_H
+#define TNODE_H
+
 #include <iostream>
 #include <fstream>
 
@@ -33,7 +37,7 @@ public:
     template <class TTK, class TTV> friend class TMap;
     template <class TTK, class TTV> friend class TSortMap;
 
-	template<class TK, class TV>
+	template<class TTK, class TTV>
 	friend std::ofstream& operator<<(std::ofstream& out, const TNode<TK, TV>& N);
 
 	friend class TMap<TK, TV>;
@@ -125,3 +129,5 @@ inline bool TNode<TK, TV>::operator<(TNode& p)
 	else
 		return false;
 }
+
+#endif
